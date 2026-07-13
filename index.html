@@ -173,6 +173,39 @@
         }
         .wish-sticker { width: 120px; height: auto; margin: 0 auto 20px; display: block; border-radius: 16px; }
         #wishes p { font-size: 1.1rem; color: #7a5a65; margin-bottom: 20px; }
+
+        #contact {
+            text-align: center; padding: 60px 24px;
+        }
+        #contact h2 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2.4rem; color: #c94b6d; margin-bottom: 12px;
+        }
+        #contact p { font-size: 1rem; color: #7a5a65; margin-bottom: 24px; }
+        #contactForm {
+            display: flex; flex-direction: column; gap: 12px;
+            max-width: 360px; margin: 0 auto;
+        }
+        #contactForm input {
+            padding: 12px 16px; border: 2px solid #ffb6c1;
+            border-radius: 12px; font-size: 1rem;
+            font-family: 'Quicksand', sans-serif;
+            background: rgba(255,255,255,0.7);
+            outline: none; transition: border-color 0.2s;
+        }
+        #contactForm input:focus { border-color: #ff6b8a; }
+        #contactForm button {
+            background: linear-gradient(135deg, #ff6b8a, #ff8fab);
+            border: none; color: #fff; font-size: 1.1rem; font-weight: 700;
+            padding: 12px; border-radius: 12px; cursor: pointer;
+            transition: transform 0.2s; font-family: 'Quicksand', sans-serif;
+        }
+        #contactForm button:hover { transform: scale(1.03); }
+        #contactSuccess {
+            margin-top: 16px; font-size: 1.1rem;
+            font-family: 'Dancing Script', cursive; color: #c94b6d;
+            min-height: 30px;
+        }
         .secret-btn {
             background: transparent;
             border: 2px dashed #ff8fab;
@@ -224,6 +257,7 @@
     <a href="#timeline">📅</a>
     <a href="#love-notes">💌</a>
     <a href="#wishes">🎀</a>
+    <a href="#contact">💌</a>
 </nav>
 
 <section id="hero">
@@ -277,6 +311,17 @@
     <img src="stickers/sticker4.png" alt="sticker" class="wish-sticker" />
     <button class="secret-btn" onclick="toggleSecret()">💗 bấm để thấy bất ngờ</button>
     <div id="secret-message"></div>
+</section>
+
+<section id="contact">
+    <h2>💌 kết bạn nha</h2>
+    <p>điền thông tin của bạn để mình làm quen nhé ✨</p>
+    <form id="contactForm">
+        <input type="text" name="name" placeholder="tên của bạn..." required />
+        <input type="text" name="contact" placeholder="fb / zalo / số điện thoại..." />
+        <button type="submit">💖 gửi</button>
+    </form>
+    <div id="contactSuccess"></div>
 </section>
 
 <footer>
@@ -394,6 +439,18 @@
         void el.offsetWidth;
         el.classList.add('show');
     }
+
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        const name = this.name.value.trim();
+        const contact = this.contact.value.trim();
+        if (!name) return;
+        const msg = contact
+            ? `cảm ơn ${name} <3 mình sẽ liên lạc qua ${contact} nha 💕`
+            : `cảm ơn ${name} <3 nhớ để lại thông tin để mình kết bạn với bạn nha 🌸`;
+        document.getElementById('contactSuccess').innerHTML = msg;
+        this.reset();
+    });
 
     const emojisBg = ['❤️','💛','💚','💙','💜','🌸','✨','🌷','🌹'];
     for (let i = 0; i < 20; i++) {

@@ -150,7 +150,8 @@
         }
         .note-card {
             background: rgba(255,255,255,0.6);
-            border-radius: 20px; padding: 24px;
+            border-radius: 20px; padding: 16px;
+            display: flex; align-items: center; justify-content: center;
             transition: transform 0.3s, box-shadow 0.3s;
             cursor: default;
         }
@@ -158,8 +159,7 @@
             transform: scale(1.03);
             box-shadow: 0 8px 24px rgba(255,105,135,0.2);
         }
-        .note-card .emoji { font-size: 2.5rem; margin-bottom: 12px; display: block; }
-        .note-card p { font-size: 1rem; color: #7a5a65; }
+        .note-sticker { width: 100%; max-width: 200px; height: auto; object-fit: contain; border-radius: 16px; }
 
         #wishes {
             background: rgba(255,255,255,0.4);
@@ -171,6 +171,7 @@
             font-family: 'Dancing Script', cursive;
             font-size: 2.4rem; color: #c94b6d; margin-bottom: 24px;
         }
+        .wish-sticker { width: 120px; height: auto; margin: 0 auto 20px; display: block; border-radius: 16px; }
         #wishes p { font-size: 1.1rem; color: #7a5a65; margin-bottom: 20px; }
         .secret-btn {
             background: transparent;
@@ -219,86 +220,67 @@
 <canvas id="heartCanvas"></canvas>
 
 <nav>
-    <a href="#hero">🏠 Home</a>
-    <a href="#timeline">📅 Our Story</a>
-    <a href="#love-notes">💌 Love Notes</a>
-    <a href="#wishes">🎀 Wishes</a>
+    <a href="#hero">🏠</a>
+    <a href="#timeline">📅</a>
+    <a href="#love-notes">💌</a>
+    <a href="#wishes">🎀</a>
 </nav>
 
 <section id="hero">
-    <img class="avatar" src="https://api.dicebear.com/7.x/thumbs/svg?seed=crush&backgroundColor=ffb6c1" alt="avatar cute" />
-    <h1>to: crush 💕</h1>
-    <p class="subtitle">tu nho den lon, anh chi muon ben em 🌸</p>
-    <p class="tagline">Click bat ky dau de xem dieu ky Dieu ✨</p>
-    <button class="heart-btn" onclick="burstHearts(60)">💖 Bam vao day ne!</button>
+    <img class="avatar" src="stickers/hero.png" alt="sticker" />
+    <h1>cho em gửi cái này ❤️</h1>
+    <p class="subtitle">nhấn vào đâu cũng có tim bay ✨</p>
+    <button class="heart-btn" onclick="burstHearts(60)">💖 bấm nè</button>
 </section>
 
 <section id="timeline">
-    <h2>📖 Nhung Khoanh Khac</h2>
+    <h2>📖 nhắn em</h2>
     <div class="timeline-grid">
         <div class="timeline-item">
-            <span class="emoji">👀</span>
+            <span class="emoji">🌤️</span>
             <div class="text">
-                <h3>Lan Dau Gap</h3>
-                <p>Hom do em mac ao mau hong, anh nho mai...</p>
-            </div>
-        </div>
-        <div class="timeline-item">
-            <span class="emoji">💬</span>
-            <div class="text">
-                <h3>Tin Nhan Dau Tien</h3>
-                <p>"Hello" - mot tu ma lam thay doi ca the gioi.</p>
+                <p>chúc em một ngày tốt lành</p>
             </div>
         </div>
         <div class="timeline-item">
             <span class="emoji">☕</span>
             <div class="text">
-                <h3>Hen Ho</h3>
-                <p>Ly cafe dau tien, em cuoi va anh biet minh yeu mat roi.</p>
+                <p>nhớ uống đủ nước nha</p>
             </div>
         </div>
         <div class="timeline-item">
-            <span class="emoji">🎂</span>
+            <span class="emoji">🌙</span>
             <div class="text">
-                <h3>Sinh Nhat Em</h3>
-                <p>Ngay quan trong nhat trong nam, anh chi muon ben em.</p>
+                <p>ngủ sớm nè, đừng thức khuya</p>
             </div>
         </div>
     </div>
 </section>
 
 <section id="love-notes">
-    <h2>💌 Nhan Nhe Nhang</h2>
+    <h2>💌 sticker cho em</h2>
     <div class="notes-grid">
         <div class="note-card">
-            <span class="emoji">🌷</span>
-            <p>Em cuoi nhu hoa, lam con tim anh loan nhip.</p>
+            <img src="stickers/sticker1.png" alt="sticker" class="note-sticker" />
         </div>
         <div class="note-card">
-            <span class="emoji">🌟</span>
-            <p>Moi ngay tro nen tuyet voi hon khi co em ben canh.</p>
+            <img src="stickers/sticker2.png" alt="sticker" class="note-sticker" />
         </div>
         <div class="note-card">
-            <span class="emoji">🎵</span>
-            <p>Anh thuong nho em qua, dua am thanh thanh giai dieu ngot ngao.</p>
-        </div>
-        <div class="note-card">
-            <span class="emoji">🌙</span>
-            <p>Dem nao cung chuc em ngu ngon, mong em mo dep.</p>
+            <img src="stickers/sticker3.png" alt="sticker" class="note-sticker" />
         </div>
     </div>
 </section>
 
 <section id="wishes">
-    <h2>🎀 Gui Den Em</h2>
-    <p>Anh viet trang web nay chi danh cho em thoi.</p>
-    <p>Nhung dieu anh muon noi rat nhieu, nhung chi can em cuoi la du.</p>
-    <button class="secret-btn" onclick="toggleSecret()">💗 Bam vao de biet bi mat</button>
+    <h2>🎀 tặng em nè</h2>
+    <img src="stickers/sticker4.png" alt="sticker" class="wish-sticker" />
+    <button class="secret-btn" onclick="toggleSecret()">💗 bấm để thấy bất ngờ</button>
     <div id="secret-message"></div>
 </section>
 
 <footer>
-    Made with 💖 for you | yeu em ❤️
+    làm cho em ❤️
 </footer>
 
 <script>
@@ -397,12 +379,11 @@
     });
 
     const secretMessages = [
-        "Anh thich em tu cai nhin dau tien ❤️",
-        "Moi lan em cuoi, anh lai bi say them mot chut 😊",
-        "Em chinh la dieu dep nhat xay ra doi anh 🌹",
-        "Anh chi muon o ben em, mai mai 💕",
-        "Em noi di, co phep thuat gi ma em dep the ✨",
-        "Lam nguoi yeu anh nhe? :)"
+        "cảm ơn em đã ghé thăm ❤️",
+        "em dễ thương quá à 😊",
+        "chúc em luôn vui vẻ 🌸",
+        "hôm nay em ăn cơm chưa? 💕",
+        "ngủ sớm nha em ✨",
     ];
 
     function toggleSecret() {

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>crush oi ❤️</title>
+    <title>gửi cậu ❤️</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Quicksand:wght@300;400;600;700&display=swap');
 
@@ -262,18 +262,18 @@
 
 <section id="hero">
     <img class="avatar" src="stickers/hero.png" alt="sticker" />
-    <h1>cho em gửi cái này ❤️</h1>
-    <p class="subtitle">nhấn vào đâu cũng có tim bay ✨</p>
+    <h1>gửi cậu cái này ❤️</h1>
+    <p class="subtitle">nhấn vào đâu cũng có tim bay nè ✨</p>
     <button class="heart-btn" onclick="burstHearts(60)">💖 bấm nè</button>
 </section>
 
 <section id="timeline">
-    <h2>📖 nhắn em</h2>
+    <h2>📖 nhắn cậu</h2>
     <div class="timeline-grid">
         <div class="timeline-item">
             <span class="emoji">🌤️</span>
             <div class="text">
-                <p>chúc em một ngày tốt lành</p>
+                <p>chúc cậu một ngày tốt lành</p>
             </div>
         </div>
         <div class="timeline-item">
@@ -292,7 +292,7 @@
 </section>
 
 <section id="love-notes">
-    <h2>💌 sticker cho em</h2>
+    <h2>💌 sticker</h2>
     <div class="notes-grid">
         <div class="note-card">
             <img src="stickers/sticker1.png" alt="sticker" class="note-sticker" />
@@ -307,7 +307,7 @@
 </section>
 
 <section id="wishes">
-    <h2>🎀 tặng em nè</h2>
+    <h2>🎀 tặng cậu nè</h2>
     <img src="stickers/sticker4.png" alt="sticker" class="wish-sticker" />
     <button class="secret-btn" onclick="toggleSecret()">💗 bấm để thấy bất ngờ</button>
     <div id="secret-message"></div>
@@ -325,7 +325,7 @@
 </section>
 
 <footer>
-    làm cho em ❤️
+    làm cho cậu ❤️
 </footer>
 
 <script>
@@ -424,11 +424,10 @@
     });
 
     const secretMessages = [
-        "cảm ơn em đã ghé thăm ❤️",
-        "em dễ thương quá à 😊",
-        "chúc em luôn vui vẻ 🌸",
-        "hôm nay em ăn cơm chưa? 💕",
-        "ngủ sớm nha em ✨",
+        "cảm ơn cậu đã ghé thăm ❤️",
+        "chúc cậu luôn vui vẻ 🌸",
+        "hôm nay cậu ăn cơm chưa?",
+        "ngủ sớm nha cậu ✨",
     ];
 
     function toggleSecret() {
@@ -446,8 +445,8 @@
         const contact = this.contact.value.trim();
         if (!name) return;
         const msg = contact
-            ? `cảm ơn ${name} <3 mình sẽ liên lạc qua ${contact} nha 💕`
-            : `cảm ơn ${name} <3 nhớ để lại thông tin để mình kết bạn với bạn nha 🌸`;
+            ? `cảm ơn ${name} nha, mình sẽ liên lạc qua ${contact} nhé`
+            : `cảm ơn ${name} nha, nhớ để lại thông tin để mình kết bạn với cậu nhé 🌸`;
         document.getElementById('contactSuccess').innerHTML = msg;
         this.reset();
     });
